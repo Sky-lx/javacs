@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script>
+        <!-- 定义方法-->
+        function fun() {
+            $.ajax(
+                {
+                    // 请求路径
+                    url: "/demo/user/register",
+                    //请求方式
+                    type: "POST",
+
+                    success: function (data) {
+                        $("#sp").html(data);
+                    },
+                    //表示如果请求响应出现错误,会执行的回调函数
+                    error: function () {
+                        alert("注册成功")
+                    },
+                    //设置接受到的响应数据的格式
+                    dataType:"text"
+
+                }
+            )
+        }
+    </script>
+    <script type="text/javascript" src="/demo/js/register.js">
+    </script>
+
+</head>
+<body>
+<div id="wrap">
+    <div id="top_content">
+        <div id="logo_login">
+            <a href="index.html"><h1>流星音乐</h1></a>
+            <div id="content">
+                <p id="whereami"></p>
+                <h1>欢迎注册</h1>
+                <form action="/demo/user/register" method="post" onsubmit="return checkUser()*checkEma()==1">
+                    <table cellpadding="0" cellspacing="0" border="0"
+                           class="form_table">
+                        <tr>
+                            <td valign="middle" align="right">用户名</td>
+                            <td valign="middle" align="left">
+                                <input type="text" class="inputgri" name="username" id="user" onblur="checkUser();"/>
+                                <span id="user_span"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td valign="middle" align="right">密码</td>
+                            <td valign="middle" align="left">
+                                <input type="password" class="inputgri" name="password"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td valign="middle" align="right">确定密码</td>
+                            <td valign="middle" align="left">
+                                <input type="password" class="inputgri" name="OKpassword"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td valign="middle" align="right">年龄</td>
+                            <td valign="middle" align="left">
+                                <select class="inputgri" name="age">
+                                    <option>请选择</option>
+                                    <script>
+                                        for (var i = 1; i <= 100; i++) {
+                                            document.write("<option value='" + i + "'>" + i + "</option>");
+                                        }
+                                    </script>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td valign="middle" align="right">邮箱</td>
+                            <td valign="middle" align="left">
+                                <input type="text" class="inputgri" name="email" id="ema" onblur="checkEma();"/>
+                                <span id="ema_span"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td valign="middle" align="right">性别</td>
+                            <td valign="middle" align="left">
+                                <input type="radio" name="gender" maxlength="8" checked="checked" value="boy"
+                                       id="auto1"/><label for="auto1">男</label>
+                                <input type="radio" name="gender" maxlength="8" value="girl" id="auto2"/><label
+                                    for="auto2">女</label>
+                            </td>
+                        </tr>
+                    </table>
+                    <input type="submit" class="button" value="注册" onclick="fun()"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span style="font-size: 20px; color: red;" id="sp"></span>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>

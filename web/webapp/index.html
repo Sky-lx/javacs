@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link href="css/index.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="js/header.js"></script>
+</head>
+<body>
+<div id="header">
+    <div id="logo">
+        <h1>流星音乐</h1>
+    </div>
+    <div id="search">
+        <form action="findMusic.do">
+            <input id="search-key" placeholder="请输入您要搜索的歌曲" name="str">
+            <input id="search-sub" type="submit" value="搜索">
+        </form>
+    </div>
+    <div id="menu">
+        <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="findMusic.do">歌单</a></li>
+            <li><a href="musicbox.jsp">视频</a></li>
+            <li><a href="message.jsp">留言栏</a></li>
+            <li><a href="login.jsp">登陆</a></li>
+            <li><a href="register.html">注册</a></li>
+        </ul>
+        <div id="menu_time">
+            <span>当前时间:</span>
+            <span id="time"></span>
+        </div>
+    </div>
+</div>
+</br>
+<!-- page -->
+<div id="page">
+    <img src="images/index-bj.jpg">
+</div>
+<div id="footer">
+
+    <div class="f_left">
+        <img src="images/footerFont.png">
+    </div>
+    <div class="f_center">
+        <ul>
+            <li><a href="#"><h3>音乐助手</h3></a></li>
+            <li><a href="#">电台</a></li>
+            <li><a href="#">酷群</a></li>
+            <li><a href="#">音乐圈</a></li>
+        </ul>
+        <ul>
+            <li><a href="#"><h3>友情链接</h3></a></li>
+            <li><a href="#">酷狗音乐</a></li>
+            <li><a href="#">QQ音乐</a></li>
+            <li><a href="#">网易云音乐</a></li>
+        </ul>
+        <ul>
+            <li><a href="#"><h3>后台管理</h3></a></li>
+            <li><a href="#">用户管理</a></li>
+            <li><a href="#">歌曲管理</a></li>
+            <li><a href="#">客户端下载</a></li>
+        </ul>
+    </div>
+</div>
+
+<div id="end">
+    <p id="copyright">©流星</p>
+</div>
+</body>
+</html>
